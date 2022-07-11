@@ -4,6 +4,24 @@ fail_fast: true
 
 repos:
 
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: no-commit-to-branch
+      - id: pretty-format-json
+      - id: trailing-whitespace
+
   - repo: https://github.com/MarcoGorelli/absolufy-imports
     rev: v0.3.1
     hooks:
@@ -43,25 +61,6 @@ repos:
     rev: v1.3.0
     hooks:
     -   id: yesqa
-
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
-    hooks:
-      - id: check-ast
-      - id: check-case-conflict
-      - id: check-docstring-first
-      - id: check-json
-      - id: check-merge-conflict
-      - id: check-toml
-      - id: check-xml
-      - id: check-yaml
-      - id: debug-statements
-      - id: detect-private-key
-      - id: end-of-file-fixer
-      - id: no-commit-to-branch
-        args: ['--branch', 'main']
-      - id: pretty-format-json
-      - id: trailing-whitespace
 
   - repo: https://gitlab.com/pycqa/flake8
     rev: 4.0.1
