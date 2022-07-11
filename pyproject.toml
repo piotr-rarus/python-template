@@ -1,20 +1,18 @@
 [tool.poetry]
 name = "python-template"
 version = "0.1.0"
-description = "Python template repositoy for data science oriented projects."
+description = "Python template repository for ML projects"
 authors = ["piotr.rarus@gmail.com"]
 
 [tool.poetry.dependencies]
 jupyter = "^1.0.0"
 pandas = "^1.4.2"
-pandas-profiling = {extras = ["notebook"], version = "^3.2.0"}
 plotly = "^5.8.0"
 pydantic = "^1.9.1"
 python = "~3.9"
 returns = "^0.19.0"
 scikit-learn = "^1.1.1"
 seaborn = "^0.11.2"
-sklearn-pandas = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
