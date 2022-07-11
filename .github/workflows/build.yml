@@ -32,9 +32,9 @@ jobs:
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
 
-    - name: Linter
+    - name: pre-commit
       run: |
-        poetry run flake8 src
+        poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml
 
     - name: Mypy
       run: |
