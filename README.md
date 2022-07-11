@@ -55,12 +55,15 @@ make build
 
 This hook is here to prevent you from committing any nasty code to your repository.
 
-- syntax checks and fixers
-- no commit to main branch (these should be only merged with PRs)
-- [absolufy imports](https://github.com/MarcoGorelli/absolufy-imports)
-- detect dead code with [vulture](https://github.com/jendrikseipp/vulture)
+- refactor relative imports [(absolufy-imports)](https://github.com/MarcoGorelli/absolufy-imports)
+- detect dead code [(vulture)](https://github.com/jendrikseipp/vulture)
+- spell checks [(codespell)](https://github.com/codespell-project/codespell)
 - sort imports [isort](https://github.com/timothycrosley/isort)
 - autoformatting [black](https://github.com/psf/black)
+- upgrade old syntax to newer Python version [(pyupgrade)](https://github.com/asottile/pyupgrade)
+- remove unnecessary `#noqa` comments [(yesqa)](https://github.com/asottile/yesqa)
+- miscellaneous syntax checks and fixers
+- no commit to main branch (these should be only merged with PRs)
 - finally some linter to be sure [flake8](https://gitlab.com/pycqa/flake8)
 
 ## Closing remarks
