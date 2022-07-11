@@ -17,9 +17,15 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: no-commit-to-branch
-        args: ['--branch', 'master']
+        args: ['--branch', 'main']
       - id: pretty-format-json
       - id: trailing-whitespace
+
+  - repo: https://github.com/MarcoGorelli/absolufy-imports
+    rev: v0.3.1
+    hooks:
+    - id: absolufy-imports
+
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
