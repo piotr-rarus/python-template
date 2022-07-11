@@ -2,7 +2,7 @@
 name = "python-template"
 version = "0.1.0"
 description = "Python template repository for ML projects"
-authors = ["piotr.rarus@gmail.com"]
+authors = ["peepo-dev-family"]
 
 [tool.poetry.dependencies]
 jupyter = "^1.0.0"
@@ -59,6 +59,13 @@ exclude = '''
   | profiling
 )/
 '''
+
+[tool.vulture]
+make_whitelist = true
+min_confidence = 80
+paths = ["src"]
+sort_by_size = true
+verbose = true
 
 [tool.pytest.ini_options]
 minversion = "7.0"

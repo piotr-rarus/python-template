@@ -25,7 +25,12 @@ repos:
     rev: v0.3.1
     hooks:
     - id: absolufy-imports
+      files: ^src/
 
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: v2.4
+    hooks:
+      - id: vulture
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
