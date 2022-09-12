@@ -1388,7 +1388,7 @@ python-versions = "*"
 
 [[package]]
 name = "types-chardet"
-version = "4.0.4"
+version = "5.0.4"
 description = "Typing stubs for chardet"
 category = "dev"
 optional = false
@@ -1539,7 +1539,7 @@ notebook = ">=4.4.1"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.9"
-content-hash = "b1db37f0a97b2110a0d47faff1c84c6aa321ec92227d451f9339273e052c00e7"
+content-hash = "aceb2b007a6431048101a004c479b8037b49c0332dcba392b05887d9d57f1c41"
 
 [metadata.files]
 appnope = [
@@ -2611,8 +2611,8 @@ types-certifi = [
     {file = "types_certifi-2021.10.8.2-py3-none-any.whl", hash = "sha256:d8d61752071a10747f441c169967e31d43c1875d851973f4f9851c1cb8c5ed9d"},
 ]
 types-chardet = [
-    {file = "types-chardet-4.0.4.tar.gz", hash = "sha256:eeb10378b44261238444d61c8e12d97d8dee151f0f4b96cc9d4ac559ca8be299"},
-    {file = "types_chardet-4.0.4-py3-none-any.whl", hash = "sha256:43f7e32aba6faab0c4441075bfe7cd11807282456b913cd28c60e8ca7aeb8e4e"},
+    {file = "types-chardet-5.0.4.tar.gz", hash = "sha256:449a98338fa264ddee88dd3a8141989f0ae920bcc720460c54b9f4374a6c1bb3"},
+    {file = "types_chardet-5.0.4-py3-none-any.whl", hash = "sha256:6946e22f32789a473852570810b4afe632172fae03c04bdbffe670606cc4ac11"},
 ]
 types-cryptography = [
     {file = "types-cryptography-3.3.21.tar.gz", hash = "sha256:ad1b9c63159c009f8676c7e41a4d595dfb96e8c03affa2e693e1617908bb409e"},
