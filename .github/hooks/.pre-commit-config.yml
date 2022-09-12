@@ -3,6 +3,7 @@ default_stages: [commit]
 fail_fast: true
 
 repos:
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
@@ -14,12 +15,30 @@ repos:
       - id: check-toml
       - id: check-xml
       - id: check-yaml
+      - id: debug-statements
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: no-commit-to-branch
-        args: ['--branch', 'master']
       - id: pretty-format-json
       - id: trailing-whitespace
+
+  - repo: https://github.com/MarcoGorelli/absolufy-imports
+    rev: v0.3.1
+    hooks:
+      - id: absolufy-imports
+        files: ^src/
+
+  - repo: https://github.com/jendrikseipp/vulture
+    rev: v2.4
+    hooks:
+      - id: vulture
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.1.0
+    hooks:
+      - id: codespell
+        types_or: [python, rst, markdown]
+        args: [--ignore-words=.codespell]
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
@@ -27,11 +46,22 @@ repos:
       - id: isort
         name: isort (python)
 
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.34.0
+    hooks:
+      - id: pyupgrade
+        args: [--py39-plus]
+
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.3.0
+    hooks:
+      - id: yesqa
+
   - repo: https://github.com/psf/black
     rev: 22.3.0
     hooks:
-    - id: black
-      language_version: python3.8
+      - id: black
+        language_version: python3.8
 
   - repo: https://gitlab.com/pycqa/flake8
     rev: 4.0.1

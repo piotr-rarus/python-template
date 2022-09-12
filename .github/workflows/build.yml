@@ -28,17 +28,23 @@ jobs:
         path: .venv
         key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
+    - name: Cache pre-commit
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pre-commit
+        key: pre-commit-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('.github/hooks/.pre-commit-config.yml') }}
+
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
 
-    - name: Linter
+    - name: pre-commit
       run: |
-        poetry run flake8 src
+        poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml
 
     - name: Mypy
       run: |
-        poetry run mypy --incremental --show-error-codes --pretty src
+        poetry run mypy --install-types --incremental --show-error-codes --pretty src
 
     - name: Tests
       run: |
