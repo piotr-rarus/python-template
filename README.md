@@ -4,7 +4,7 @@
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
-This is a template repository dedicated to ML projects in python. It provides some basic tools and configs necessary to start the development.
+This is a template repository dedicated to ML projects in python. It provides some basic tools and configs necessary to kickstart the development.
 
 ## Structure
 
@@ -17,7 +17,7 @@ This is a template repository dedicated to ML projects in python. It provides so
 - `.coveragearc` - corage config config, usually you don't want to report coverage on CLI, tests and some expressions
 - `.flake8` - `flake8` config
 - `isort.cfg` - `isort` config
-- `Makefile` - tasks definitions, much simplier to call `make` than writing whole commands in the terminal
+- `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal
 - `mypy.ini` - `mypy` config, usually some of your dependencies won't be hinted so you gonna ignore them here
 - `poetry.lock` - compiled dependencies
 - `poetry.toml` - `poetry` config
@@ -65,15 +65,15 @@ make build
 
 This hook is here to prevent you from committing any nasty code to your repository.
 
+- miscellaneous syntax checks and fixers
+- no commit to main branch (these should be only merged with PRs)
 - refactor relative imports [(absolufy-imports)](https://github.com/MarcoGorelli/absolufy-imports)
 - detect dead code [(vulture)](https://github.com/jendrikseipp/vulture)
 - spell checks [(codespell)](https://github.com/codespell-project/codespell)
 - sort imports [isort](https://github.com/timothycrosley/isort)
-- autoformatting [black](https://github.com/psf/black)
 - upgrade old syntax to newer Python version [(pyupgrade)](https://github.com/asottile/pyupgrade)
 - remove unnecessary `#noqa` comments [(yesqa)](https://github.com/asottile/yesqa)
-- miscellaneous syntax checks and fixers
-- no commit to main branch (these should be only merged with PRs)
+- autoformatting [black](https://github.com/psf/black)
 - finally some linter to be sure [flake8](https://gitlab.com/pycqa/flake8)
 
 ## Closing remarks
