@@ -13,6 +13,15 @@ This is a template repository dedicated to ML projects in python. It provides so
 - `notebooks` - notebooks are particularly _meh_, but this is the directory to put them
 - `src` - here goes your project's code
 - `src/cli` - project's entry points should be wrapped with CLI and exposed via Makefile, good idea to store them separately
+- `.codespell` - whitelist for project-related terms
+- `.coveragearc` - corage config config, usually you don't want to report coverage on CLI, tests and some expressions
+- `.flake8` - `flake8` config
+- `isort.cfg` - `isort` config
+- `Makefile` - tasks definitions, much simplier to call `make` than writing whole commands in the terminal
+- `mypy.ini` - `mypy` config, usually some of your dependencies won't be hinted so you gonna ignore them here
+- `poetry.lock` - compiled dependencies
+- `poetry.toml` - `poetry` config
+- `pyproject.toml` - repo config
 
 ## Tools
 
