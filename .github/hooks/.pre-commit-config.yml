@@ -25,8 +25,8 @@ repos:
   - repo: https://github.com/MarcoGorelli/absolufy-imports
     rev: v0.3.1
     hooks:
-    - id: absolufy-imports
-      files: ^src/
+      - id: absolufy-imports
+        files: ^src/
 
   - repo: https://github.com/jendrikseipp/vulture
     rev: v2.4
@@ -36,8 +36,9 @@ repos:
   - repo: https://github.com/codespell-project/codespell
     rev: v2.1.0
     hooks:
-    -   id: codespell
+      - id: codespell
         types_or: [python, rst, markdown]
+        args: [--ignore-words=.codespell]
 
   - repo: https://github.com/timothycrosley/isort
     rev: 5.10.1
@@ -45,22 +46,22 @@ repos:
       - id: isort
         name: isort (python)
 
-  - repo: https://github.com/psf/black
-    rev: 22.3.0
-    hooks:
-    - id: black
-      language_version: python3.8
-
   - repo: https://github.com/asottile/pyupgrade
     rev: v2.34.0
     hooks:
-    -   id: pyupgrade
+      - id: pyupgrade
         args: [--py39-plus]
 
   - repo: https://github.com/asottile/yesqa
     rev: v1.3.0
     hooks:
-    -   id: yesqa
+      - id: yesqa
+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        language_version: python3.8
 
   - repo: https://gitlab.com/pycqa/flake8
     rev: 4.0.1
