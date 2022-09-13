@@ -7,7 +7,7 @@ authors = ["peepo-dev-family"]
 [tool.poetry.dependencies]
 jupyter = "^1.0.0"
 pandas = "^1.4.2"
-plotly = "^5.8.0"
+plotly = "^5.10.0"
 pydantic = "^1.9.1"
 python = "~3.9"
 returns = "^0.19.0"
