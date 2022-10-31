@@ -33,6 +33,7 @@ types-requests = "^2.27.12"
 types-setuptools = "^57.4.10"
 types-simplejson = "^3.17.3"
 types-tzlocal = "^4.1.0"
+vulture = "^2.6"
 
 [tool.isort]
 profile = "black"
@@ -65,7 +66,7 @@ make_whitelist = true
 min_confidence = 80
 paths = ["src"]
 sort_by_size = true
-verbose = true
+verbose = false
 
 [tool.pytest.ini_options]
 minversion = "7.0"
