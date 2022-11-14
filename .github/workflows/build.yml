@@ -9,12 +9,7 @@ jobs:
     steps:
 
     - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.9
+      uses: actions/checkout@v3
 
     - name: Install Poetry
       uses: snok/install-poetry@v1
@@ -22,11 +17,11 @@ jobs:
         virtualenvs-in-project: true
         virtualenvs-path: .venv
 
-    - name: Cache Poetry
-      uses: actions/cache@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
       with:
-        path: .venv
-        key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+        python-version: 3.9
+        cache: 'poetry'
 
     - name: Cache pre-commit
       uses: actions/cache@v3
