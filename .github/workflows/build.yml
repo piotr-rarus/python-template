@@ -43,7 +43,7 @@ jobs:
 
     - name: Vulture
       run: |
-        poetry run vulture src
+        poetry run vulture
 
     - name: Tests
       run: |
