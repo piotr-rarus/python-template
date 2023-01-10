@@ -31,6 +31,7 @@ When developing a project there's a need to automate some tedious stuff that hel
 - [flake8](https://github.com/PyCQA/flake8)
 - [isort](https://github.com/PyCQA/isort)
 - [mypy](https://github.com/python/mypy)
+- [(vulture)](https://github.com/jendrikseipp/vulture)
 - [poetry](https://github.com/python-poetry/poetry)
 
 ## [Makefile](Makefile)
@@ -41,7 +42,7 @@ To start your work, you need to set up your local environment and hooks.
 make install_dev
 ```
 
-You gonna put your CLI here later. It already contains calls to build tools and checks. Use `build` to run them all (`isort`, `black`, `pre_commit`, `flake8`, `mypy`, `test`).
+You gonna put your CLI here later. It already contains calls to build tools and checks. Use `build` to run them all (`isort`, `black`, `pre_commit`, `flake8`, `mypy`, `vulture`, `test`).
 
 ```sh
 make build
@@ -68,7 +69,6 @@ This hook is here to prevent you from committing any nasty code to your reposito
 - miscellaneous syntax checks and fixers
 - no commit to main branch (these should be only merged with PRs)
 - refactor relative imports [(absolufy-imports)](https://github.com/MarcoGorelli/absolufy-imports)
-- detect dead code [(vulture)](https://github.com/jendrikseipp/vulture)
 - spell checks [(codespell)](https://github.com/codespell-project/codespell)
 - sort imports [isort](https://github.com/timothycrosley/isort)
 - upgrade old syntax to newer Python version [(pyupgrade)](https://github.com/asottile/pyupgrade)

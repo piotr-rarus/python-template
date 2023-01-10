@@ -1,11 +1,11 @@
 # Installation
-setup_venv:
+install_venv:
 	poetry install --no-root
 
 install_pre_commit:
 	poetry run pre-commit install -c .github/hooks/.pre-commit-config.yml
 
-install_dev: setup_venv install_pre_commit
+install_dev: install_venv install_pre_commit
 
 # Dev tools
 isort:
@@ -23,6 +23,9 @@ format: isort black
 mypy:
 	poetry run mypy --incremental --install-types --show-error-codes --pretty src
 
+vulture:
+	poetry run vulture src
+
 pre_commit:
 	poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml
 
@@ -38,7 +41,7 @@ test_cov:
 compile_env:
 	poetry lock --no-update
 
-build: isort black pre_commit flake8 mypy test
+build: isort black pre_commit flake8 mypy vulture test
 
 # Misc
 jupyter:
