@@ -24,7 +24,7 @@ mypy:
 	poetry run mypy --incremental --install-types --show-error-codes --pretty src
 
 vulture:
-	poetry run vulture src
+	poetry run vulture
 
 pre_commit:
 	poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml

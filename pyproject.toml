@@ -56,7 +56,7 @@ make_whitelist = true
 min_confidence = 80
 paths = ["src"]
 sort_by_size = true
-verbose = true
+verbose = false
 
 [tool.pytest.ini_options]
 minversion = "7.0"
