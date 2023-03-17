@@ -19,7 +19,6 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: no-commit-to-branch
-      - id: pretty-format-json
       - id: trailing-whitespace
 
   - repo: https://github.com/MarcoGorelli/absolufy-imports
