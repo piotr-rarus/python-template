@@ -7,7 +7,7 @@ authors = ["peepo-dev-family"]
 [tool.poetry.dependencies]
 jupyter = "^1.0.0"
 pandas = "^1.4.2"
-plotly = "^5.11.0"
+plotly = "^5.14.0"
 python = "~3.10"
 scikit-learn = "^1.1.1"
 seaborn = "^0.11.2"
