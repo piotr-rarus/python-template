@@ -1,8 +1,12 @@
 # python-template
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![python](https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![build](https://github.com/piotr-rarus/python-template/actions/workflows/build.yml/badge.svg)](https://github.com/piotr-rarus/python-template/actions/workflows/build.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
 This is a template repository dedicated to ML projects in python. It provides some basic tools and configs necessary to kickstart the development.
 
@@ -14,7 +18,7 @@ This is a template repository dedicated to ML projects in python. It provides so
 - `src` - here goes your project's code
 - `src/cli` - project's entry points should be wrapped with CLI and exposed via Makefile, good idea to store them separately
 - `.codespell` - whitelist for project-related terms
-- `.coveragearc` - corage config config, usually you don't want to report coverage on CLI, tests and some expressions
+- `.coveragearc` - corage config, usually you don't want to report coverage on CLI, tests and some expressions
 - `.flake8` - `flake8` config
 - `isort.cfg` - `isort` config
 - `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal
@@ -78,4 +82,4 @@ This hook is here to prevent you from committing any nasty code to your reposito
 
 ## Closing remarks
 
-Hopefully, this template helps you jump off your project. If any of these tools are unfamiliar to you, follow the links for more info on them. Feel free to customize it, this is a template after all. Personally, I often look up how my favourite libraries are developed and take what I like. If you feel you don't need any of it, good luck to you, and pray you won't meet me cleaning up your sloppy code.
+Hopefully, this template helps you jump off your project. If any of these tools are unfamiliar to you, follow the links for more info on them. Feel free to customize it, this is a template after all. Personally, I often look up how my favourite libraries are developed and take what I like.
