@@ -26,38 +26,39 @@ repos:
       - id: absolufy-imports
         files: ^src/
 
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.4
+  - repo: local
     hooks:
       - id: codespell
+        name: codespell
+        entry: codespell
+        language: system
         types_or: [python, rst, markdown]
         args: [src]
 
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.12.0
-    hooks:
       - id: isort
-        name: isort (python)
+        name: isort
+        entry: isort
+        language: system
 
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.3.1
-    hooks:
       - id: pyupgrade
+        name: pyupgrade
+        entry: pyupgrade
+        language: system
         args: [--py310-plus]
+        files: ^src/.*/.py$
 
-  - repo: https://github.com/asottile/yesqa
-    rev: v1.4.0
-    hooks:
       - id: yesqa
+        name: yesqa
+        entry: yesqa
+        language: system
 
-  - repo: https://github.com/psf/black
-    rev: 23.1.0
-    hooks:
       - id: black
-        language_version: python3.10
+        name: black
+        entry: black
+        language: system
+        args: [src]
 
-  - repo: https://github.com/pycqa/flake8
-    rev: 6.0.0
-    hooks:
       - id: flake8
-        additional_dependencies: [flake8-isort]
+        name: flake8
+        entry: flake8
+        language: system
