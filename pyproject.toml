@@ -29,7 +29,6 @@ yesqa = "^1.4.0"
 
 [tool.flake8]
 max-line-length = 88
-extend-ignore = "E203"
 include = "src"
 
 [tool.isort]
@@ -39,12 +38,12 @@ include_trailing_comma = true
 line_length = 88
 multi_line_output = 3
 profile = "black"
-py_version = 310
+py_version = '310'
 use_parentheses = true
 
 [tool.black]
 line-length = 88
-target-version = ["py310"]
+target-version = ['py310']
 include = '\.pyi?$'
 exclude = '''
 /(

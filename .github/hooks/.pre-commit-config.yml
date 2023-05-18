@@ -33,32 +33,35 @@ repos:
         entry: codespell
         language: system
         types_or: [python, rst, markdown]
-        args: [src]
+        files: ^src/
 
       - id: isort
         name: isort
         entry: isort
         language: system
+        files: ^src/
 
       - id: pyupgrade
         name: pyupgrade
         entry: pyupgrade
         language: system
         args: [--py310-plus]
-        files: ^src/.*/.py$
+        files: ^src/
 
       - id: yesqa
         name: yesqa
         entry: yesqa
         language: system
+        files: ^src/
 
       - id: black
         name: black
         entry: black
         language: system
-        args: [src]
+        files: ^src/
 
       - id: flake8
         name: flake8
         entry: flake8
         language: system
+        files: ^src/
