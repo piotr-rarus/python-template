@@ -14,6 +14,7 @@ seaborn = "^0.11.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
+codespell = "^2.2.4"
 coverage = "^7.2.2"
 flake8 = "^6.0.0"
 isort = "^5.11.4"
@@ -23,13 +24,19 @@ pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 vulture = "^2.7"
 
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"
+include = "src"
+
 [tool.isort]
+py_version=310
 profile = "black"
 multi_line_output = 3
-include_trailing_comma = "False"
+include_trailing_comma = true
 force_grid_wrap = 0
-use_parentheses = "True"
-ensure_newline_before_comments = "True"
+use_parentheses = true
+ensure_newline_before_comments = true
 line_length = 88
 
 [tool.black]
@@ -63,6 +70,9 @@ min_confidence = 80
 paths = ["src"]
 sort_by_size = true
 verbose = false
+
+[tool.codespell]
+ignore-words = ".codespell"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
