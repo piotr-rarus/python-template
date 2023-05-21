@@ -14,23 +14,32 @@ seaborn = "^0.11.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
+codespell = "^2.2.4"
 coverage = "^7.2.2"
 flake8 = "^6.0.0"
+flake8-isort = "^6.0.0"
 isort = "^5.11.4"
 mypy = "^1.1.1"
 pre-commit = "^3.2.1"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
+pyupgrade = "^3.4.0"
 vulture = "^2.7"
+yesqa = "^1.4.0"
+
+[tool.flake8]
+max-line-length = 88
+include = "src"
 
 [tool.isort]
-profile = "black"
-multi_line_output = 3
-include_trailing_comma = "False"
+ensure_newline_before_comments = true
 force_grid_wrap = 0
-use_parentheses = "True"
-ensure_newline_before_comments = "True"
+include_trailing_comma = true
 line_length = 88
+multi_line_output = 3
+profile = "black"
+py_version = '310'
+use_parentheses = true
 
 [tool.black]
 line-length = 88
@@ -64,9 +73,12 @@ paths = ["src"]
 sort_by_size = true
 verbose = false
 
+[tool.codespell]
+ignore-words = ".codespell"
+
 [tool.pytest.ini_options]
-minversion = "7.0"
 addopts = "-ra --log-level=CRITICAL"
+minversion = "7.0"
 filterwarnings = [
     "ignore::UserWarning",
     "ignore::DeprecationWarning",
