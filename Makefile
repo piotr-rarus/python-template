@@ -23,9 +23,6 @@ format: isort black
 mypy:
 	poetry run mypy --incremental --install-types --show-error-codes --pretty src
 
-vulture:
-	poetry run vulture
-
 pre_commit:
 	poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml
 
@@ -41,7 +38,7 @@ test_cov:
 compile_env:
 	poetry lock --no-update
 
-build: isort black pre_commit flake8 mypy vulture test
+build: isort black pre_commit flake8 mypy test
 
 # Misc
 jupyter:

@@ -33,7 +33,6 @@ When developing a project there's a need to automate some tedious stuff that hel
 - [flake8](https://github.com/PyCQA/flake8)
 - [isort](https://github.com/PyCQA/isort)
 - [mypy](https://github.com/python/mypy)
-- [(vulture)](https://github.com/jendrikseipp/vulture)
 - [poetry](https://github.com/python-poetry/poetry)
 
 ## [Makefile](Makefile)
@@ -44,7 +43,7 @@ To start your work, you need to set up your local environment and hooks.
 make install_dev
 ```
 
-You gonna put your CLI here later. It already contains calls to build tools and checks. Use `build` to run them all (`isort`, `black`, `pre_commit`, `flake8`, `mypy`, `vulture`, `test`).
+You gonna put your CLI here later. It already contains calls to build tools and checks. Use `build` to run them all (`isort`, `black`, `pre_commit`, `flake8`, `mypy`, `test`).
 
 ```sh
 make build

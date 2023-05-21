@@ -47,10 +47,6 @@ jobs:
       run: |
         poetry run mypy --incremental --show-error-codes --pretty src
 
-    - name: Vulture
-      run: |
-        poetry run vulture
-
     - name: Tests
       run: |
         poetry run coverage run -m pytest src --cov-config=.coveragerc --junit-xml=junit/test-results.xml --cov-report=html --cov-report=xml
