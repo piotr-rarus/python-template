@@ -24,7 +24,6 @@ pre-commit = "^3.2.1"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 pyupgrade = "^3.4.0"
-vulture = "^2.7"
 yesqa = "^1.4.0"
 
 [tool.flake8]
@@ -65,13 +64,6 @@ exclude = '''
   | profiling
 )/
 '''
-
-[tool.vulture]
-make_whitelist = true
-min_confidence = 80
-paths = ["src"]
-sort_by_size = true
-verbose = false
 
 [tool.codespell]
 ignore-words = ".codespell"
