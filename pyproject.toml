@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-template"
-version = "0.3.0"
+version = "0.4.2"
 description = "Python template repository for ML projects"
 authors = ["peepo-dev-family"]
 
@@ -24,11 +24,16 @@ pre-commit = "^3.2.1"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 pyupgrade = "^3.4.0"
+ruff = "^0.0.270"
 yesqa = "^1.4.0"
 
 [tool.flake8]
 max-line-length = 88
 include = "src"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
 
 [tool.isort]
 ensure_newline_before_comments = true

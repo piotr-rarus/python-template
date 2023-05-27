@@ -18,6 +18,9 @@ black:
 flake8:
 	poetry run flake8 src
 
+ruff:
+	poetry run ruff check src
+
 format: isort black
 
 mypy:
@@ -38,7 +41,7 @@ test_cov:
 compile_env:
 	poetry lock --no-update
 
-build: isort black pre_commit flake8 mypy test
+build: isort black pre_commit ruff flake8 mypy test
 
 # Misc
 jupyter:
