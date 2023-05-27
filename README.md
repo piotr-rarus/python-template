@@ -14,15 +14,16 @@ This is a template repository dedicated to ML projects in python. It provides so
 
 - `.github` - CI/CD pipelines, usually named after repository host (`.github`, `.azure`, `.gitlab`, etc)
 - `data` - if you need any data to be present locally, store it here
-- `notebooks` - notebooks are kinda _meh_, but this is the directory to put them
+- `notebooks` - notebooks are particularly _meh_, but this is the directory to put them
 - `src` - here goes your project's code
 - `src/cli` - project's entry points should be wrapped with CLI and exposed via Makefile, good idea to store them separately
 - `.codespell` - whitelist for project-related terms
-- `.coveragearc` - corage config, usually you don't want to report coverage on CLI, tests and some expressions
-- `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal
+- `.coveragearc` - coverage config, usually you don't want to report coverage on CLI, tests and some expressions
+- `.pre-commit-config.yaml` - pre-commit pipeline configuration
+- `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal; it's also easy to check what project-specific functialities you're exposing
 - `mypy.ini` - `mypy` config, usually some of your dependencies won't be hinted so you gonna ignore them here
 - `poetry.lock` - compiled dependencies
-- `poetry.toml` - `poetry` config
+- `poetry.toml` - `poetry` config, as you shouldn't enforce other devs where to put their virtual environment this is must be a separate config file
 - `pyproject.toml` - repo config
 
 ## Tools
@@ -33,6 +34,7 @@ When developing a project there's a need to automate some tedious stuff that hel
 - [flake8](https://github.com/PyCQA/flake8)
 - [isort](https://github.com/PyCQA/isort)
 - [mypy](https://github.com/python/mypy)
+- [pre-commit](https://pre-commit.com/)
 - [poetry](https://github.com/python-poetry/poetry)
 
 ## [Makefile](Makefile)
@@ -57,7 +59,7 @@ To quickly format your repo while coding run:
 make format
 ```
 
-Before you commit, always run a full check:
+Before you commit, always run a full check. It's much more faster to run it locally, than to wait for CI build.
 
 ```sh
 make build
@@ -68,8 +70,6 @@ make build
 This hook is here to prevent you from committing any nasty code to your repository.
 
 - miscellaneous syntax checks and fixers
-- no commit to main branch (these should be only merged with PRs)
-- refactor relative imports [(absolufy-imports)](https://github.com/MarcoGorelli/absolufy-imports)
 - spell checks [(codespell)](https://github.com/codespell-project/codespell)
 - sort imports [isort](https://github.com/timothycrosley/isort)
 - upgrade old syntax to newer Python version [(pyupgrade)](https://github.com/asottile/pyupgrade)
@@ -77,6 +77,8 @@ This hook is here to prevent you from committing any nasty code to your reposito
 - autoformatting [black](https://github.com/psf/black)
 - finally some linter to be sure [flake8](https://gitlab.com/pycqa/flake8)
 
+Why are we using local environment to run pre-commit for us? This is rather unusual isn't it? Yes - it is. You want to use the same versions of libs (`flake8`, `black`) and have them specified in a single file. Otherwise you need to keep track of precommit dependencies as well. If you want truely separate environment for the pre-commit - use dependency groups in your package manager.
+
 ## Closing remarks
 
-Hopefully, this template helps you jump off your project. If any of these tools are unfamiliar to you, follow the links for more info on them. Feel free to customize it, this is a template after all. Personally, I often look up how my favourite libraries are developed and take what I like.
+Hopefully, this template helps you jump off your project. If any of these tools are unfamiliar to you, follow the links for more info on them. Feel free to customize it, this is a template after all. The point I often make while doing workshop is you being able to make your toolset. This is but an example.  Personally, I often look up how my favourite libraries are developed and take what I like. Just try not to overdo it. Don't use tools which are not necessary in your project. The main idea is to spent time actually coding, soliving problems, not thinking about code quality whatsoever.
