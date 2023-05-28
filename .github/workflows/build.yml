@@ -27,7 +27,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/pre-commit
-        key: pre-commit-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('.github/hooks/.pre-commit-config.yml') }}
+        key: pre-commit-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('.pre-commit-config.yaml') }}
 
     - name: Cache mypy
       uses: actions/cache@v3
@@ -41,7 +41,7 @@ jobs:
 
     - name: pre-commit
       run: |
-        poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml
+        poetry run pre-commit run -a
 
     - name: Mypy
       run: |
