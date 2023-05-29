@@ -5,6 +5,7 @@
 [![build](https://github.com/piotr-rarus/python-template/actions/workflows/build.yml/badge.svg)](https://github.com/piotr-rarus/python-template/actions/workflows/build.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/charliermarsh/ruff)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
@@ -30,12 +31,14 @@ This is a template repository dedicated to ML projects in python. It provides so
 
 When developing a project there's a need to automate some tedious stuff that helps you keep the repo clean and check it against common standards. These include managing the environment, dependencies, syntax, etc.
 
-- [coverage](https://github.com/nedbat/coveragepy)
+- [poetry](https://github.com/python-poetry/poetry)
 - [flake8](https://github.com/PyCQA/flake8)
 - [isort](https://github.com/PyCQA/isort)
-- [mypy](https://github.com/python/mypy)
+- [ruff](https://github.com/charliermarsh/ruff)
+- [black](https://github.com/psf/black)
 - [pre-commit](https://pre-commit.com/)
-- [poetry](https://github.com/python-poetry/poetry)
+- [mypy](https://github.com/python/mypy)
+- [coverage](https://github.com/nedbat/coveragepy)
 
 ## [Makefile](Makefile)
 
