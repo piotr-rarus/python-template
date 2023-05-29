@@ -3,7 +3,7 @@ install_venv:
 	poetry install --no-root
 
 install_pre_commit:
-	poetry run pre-commit install -c .github/hooks/.pre-commit-config.yml
+	poetry run pre-commit install
 
 install_dev: install_venv install_pre_commit
 
@@ -24,7 +24,7 @@ mypy:
 	poetry run mypy --incremental --install-types --show-error-codes --pretty src
 
 pre_commit:
-	poetry run pre-commit run -a -c .github/hooks/.pre-commit-config.yml
+	poetry run pre-commit run -a
 
 test:
 	poetry run pytest src
