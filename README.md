@@ -31,12 +31,14 @@ This is a template repository dedicated to ML projects in python. It provides so
 
 When developing a project there's a need to automate some tedious stuff that helps you keep the repo clean and check it against common standards. These include managing the environment, dependencies, syntax, etc.
 
-- [coverage](https://github.com/nedbat/coveragepy)
+- [poetry](https://github.com/python-poetry/poetry)
 - [flake8](https://github.com/PyCQA/flake8)
 - [isort](https://github.com/PyCQA/isort)
-- [mypy](https://github.com/python/mypy)
+- [ruff](https://github.com/charliermarsh/ruff)
+- [black](https://github.com/psf/black)
 - [pre-commit](https://pre-commit.com/)
-- [poetry](https://github.com/python-poetry/poetry)
+- [mypy](https://github.com/python/mypy)
+- [coverage](https://github.com/nedbat/coveragepy)
 
 ## [Makefile](Makefile)
 
