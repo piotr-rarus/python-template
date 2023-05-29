@@ -45,7 +45,7 @@ jobs:
 
     - name: Mypy
       run: |
-        poetry run mypy --incremental --show-error-codes --pretty src
+        poetry run mypy --incremental --no-install-types --show-error-codes --pretty src
 
     - name: Tests
       run: |

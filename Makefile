@@ -24,7 +24,7 @@ ruff:
 format: isort black
 
 mypy:
-	poetry run mypy --incremental --install-types --show-error-codes --pretty src
+	poetry run mypy --incremental --no-install-types --show-error-codes --pretty src
 
 pre_commit:
 	poetry run pre-commit run -a
