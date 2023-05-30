@@ -49,16 +49,18 @@ jobs:
 
     - name: Tests
       run: |
-        poetry run coverage run -m pytest src --cov-config=.coveragerc --junit-xml=junit/test-results.xml --cov-report=html --cov-report=xml
+        poetry run coverage run -m pytest src --cov-config=.coveragerc
 
-    - name: Tests Coverage
+    - name: Tests coverage
       run: |
         poetry run coverage html
         poetry run coverage xml
         poetry run coverage report --show-missing
 
-    # Upload your code coverage here
-    # - name: Upload codecov
-    #   uses: codecov/codecov-action@v1
-    #   with:
-    #     fail_ci_if_error: true
+    # Requires CODECOV_TOKEN in repository secrets
+    - name: Upload codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}  # Only required for private repositories
+        file: ./coverage.xml
+        fail_ci_if_error: true
