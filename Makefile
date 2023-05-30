@@ -33,7 +33,7 @@ test:
 	poetry run pytest src
 
 test_cov:
-	poetry run coverage run -m pytest src --cov-config=.coveragerc --junit-xml=junit/test-results.xml --cov-report=html --cov-report=xml
+	poetry run coverage run -m pytest src --cov-config=.coveragerc
 	poetry run coverage html
 	poetry run coverage xml
 	poetry run coverage report --show-missing
