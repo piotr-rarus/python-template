@@ -5,8 +5,6 @@ install_venv:
 install_pre_commit:
 	poetry run pre-commit install
 
-install_dev: install_venv install_pre_commit
-
 # Dev tools
 isort:
 	poetry run isort src
@@ -20,8 +18,6 @@ flake8:
 
 ruff:
 	poetry run ruff check src
-
-format: isort black
 
 mypy:
 	poetry run mypy --incremental --no-install-types --show-error-codes --pretty src
@@ -41,7 +37,13 @@ test_cov:
 compile_env:
 	poetry lock --no-update
 
-build: pre_commit ruff flake8 mypy test
+install_dev: install_venv install_pre_commit
+
+format: isort black
+
+lint: pre_commit ruff flake8 mypy
+
+build: pre_commit mypy test
 
 # Misc
 jupyter:
