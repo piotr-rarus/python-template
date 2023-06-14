@@ -74,8 +74,6 @@ make build  # pre_commit mypy test
 ## Structure
 
 - `.github` - CI/CD pipelines, usually named after repository host (`.github`, `.azure`, `.gitlab`, etc)
-- `data` - if you need any data to be present locally, store it here
-- `notebooks` - notebooks are kinda _meh_, but this is the directory to put them
 - `src` - here goes your project's code
 - `src/cli` - project's entry points should be wrapped with CLI and exposed via Makefile, good idea to store them separately
 - `.codespell` - whitelist for project-related terms
