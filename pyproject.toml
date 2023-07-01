@@ -9,7 +9,7 @@ python = "~3.10"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
-codespell = "^2.2.4"
+codespell = "^2.2.5"
 coverage = "^7.2.7"
 flake8 = "^6.0.0"
 flake8-isort = "^6.0.0"
