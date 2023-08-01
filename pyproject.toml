@@ -19,7 +19,7 @@ pre-commit = "^3.2.1"
 pytest = "^7.1.2"
 pytest-cov = "^4.1.0"
 pyupgrade = "^3.4.0"
-ruff = "^0.0.270"
+ruff = "^0.0.281"
 yesqa = "^1.4.0"
 
 [tool.flake8]
