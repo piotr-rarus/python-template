@@ -45,11 +45,11 @@ jobs:
 
     - name: Mypy
       run: |
-        poetry run mypy --incremental --no-install-types --show-error-codes --pretty src
+        poetry run mypy --incremental --no-install-types --show-error-codes --pretty src tests
 
     - name: Tests
       run: |
-        poetry run coverage run -m pytest src --cov-config=.coveragerc
+        poetry run coverage run -m pytest --cov-config=.coveragerc
 
     - name: Tests coverage
       run: |
