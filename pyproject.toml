@@ -22,10 +22,6 @@ pyupgrade = "^3.4.0"
 ruff = "^0.0.270"
 yesqa = "^1.4.0"
 
-[tool.flake8]
-max-line-length = 88
-include = "src"
-
 [tool.ruff]
 line-length = 88
 target-version = "py310"
