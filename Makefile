@@ -26,7 +26,7 @@ pre_commit:
 	poetry run pre-commit run -a
 
 test:
-	poetry run pytest src
+	poetry run pytest
 
 test_cov:
 	poetry run coverage run -m pytest src --cov-config=.coveragerc
