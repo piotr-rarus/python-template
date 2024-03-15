@@ -24,44 +24,44 @@ repos:
     hooks:
       - id: codespell
         name: codespell
-        entry: codespell
+        entry: poetry run codespell
         language: system
         types_or: [python, rst, markdown]
         files: ^src/
 
       - id: isort
         name: isort
-        entry: isort
+        entry: poetry run isort
         language: system
         files: ^src/
 
       - id: pyupgrade
         name: pyupgrade
-        entry: pyupgrade
+        entry: poetry run pyupgrade
         language: system
         args: [--py310-plus]
         files: ^src/
 
       - id: yesqa
         name: yesqa
-        entry: yesqa
+        entry: poetry run yesqa
         language: system
         files: ^src/
 
       - id: black
         name: black
-        entry: black
+        entry: poetry run black
         language: system
         files: ^src/
 
       - id: ruff
         name: ruff
-        entry: ruff
+        entry: poetry run ruff
         language: system
         files: ^src/
 
       - id: flake8
         name: flake8
-        entry: flake8
+        entry: poetry run flake8
         language: system
         files: ^src/
