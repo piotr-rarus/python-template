@@ -7,6 +7,9 @@ authors = ["peepo-dev-family"]
 [tool.poetry.dependencies]
 python = "~3.10"
 
+[tool.poetry.group.dev]
+optional = true
+
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
 codespell = "^2.2.4"
