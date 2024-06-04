@@ -8,3 +8,14 @@ updates:
       - dependency-name: "python"
     assignees:
       - "piotr-rarus"
+    groups:
+      batch-version-updates:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      batch-security-updates:
+        applies-to: security-updates
+        update-types:
+          - "minor"
+          - "patch"
