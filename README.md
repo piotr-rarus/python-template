@@ -11,7 +11,7 @@
 
 Are you tired of dealing with messy code, debugging errors, and fixing bugs that could have been prevented with proper tools and practices? Do you want to improve the overall quality of your projects while saving time in the long run? Then this template is perfect for you!
 
-This is a template repository dedicated to ML projects in `Python`. It provides some basic tools and configs necessary to kickstart the development. It includes linting, type checking, package management, testing and CI.
+This is a template repository dedicated to `Python` projects. It provides some basic tools and configs necessary to kickstart the development. It includes linting, type checking, package management, testing and CI.
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ brew install make
 To start your work, you need to set up your local environment and hooks.
 
 ```sh
-make install_dev
+make venv
 ```
 
 Later you will define aliases for your CLI here. `Makefile` already contains calls to build tools and checks. Use `build` to run them all.
@@ -62,28 +62,28 @@ Please note that `build` does not encompass the coverage and dependencies update
 To quickly format your repo while coding run:
 
 ```sh
-make format  # isort black flake8
+make format  # isort black
 ```
 
 Before you commit, always run a full check. It's much faster to run it locally than to wait for CI build.
 
 ```sh
-make build  # pre_commit mypy test
+make build  # format lint test
 ```
 
 ## Structure
 
-- `.github` - CI/CD pipelines, usually named after repository host (`.github`, `.azure`, `.gitlab`, etc)
+- `.github` - CI/CD pipelines, usually named after the repository host (`.github`, `.azure`, `.gitlab`, etc)
 - `src` - here goes your project's code
 - `src/cli` - project's entry points should be wrapped with CLI and exposed via Makefile, good idea to store them separately
 - `.codespell` - whitelist for project-related terms
 - `.coveragearc` - coverage config, usually you don't want to report coverage on CLI, tests and some expressions
 - `.env.example` - here you should state any environment variables your project uses
 - `.pre-commit-config.yaml` - pre-commit pipeline configuration
-- `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal; it's also easy to check what project-specific functialities you're exposing
+- `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal; it's also easy to check what project-specific functionalities you're exposing
 - `mypy.ini` - `mypy` config, usually some of your dependencies won't be hinted so you're gonna ignore them here
 - `poetry.lock` - compiled dependencies
-- `poetry.toml` - `poetry` config, as you shouldn't enforce other devs where to put their virtual environment this is must be a separate config file
+- `poetry.toml` - `poetry` config, as you shouldn't enforce other devs where to put their virtual environment this must be a separate config file
 - `pyproject.toml` - repo config
 
 ## Tools
@@ -115,4 +115,4 @@ Why are we using the local environment to run pre-commit for us? This is rather 
 
 ## Closing remarks
 
-Hopefully, this template helps you jump off your project. If any of these tools are unfamiliar to you, follow the links for more info on them. Feel free to customize it, this is a template after all. The point I often make while doing workshops is you being able to make your toolset. This is but an example. I often look up how my favorite libraries are developed and take what I like. Just try not to overdo it. Don't use tools that are not necessary in for project. The main idea is to spend time actually coding, solving problems, and not thinking about code quality whatsoever.
+Hopefully, this template helps you jump off your project. If any of these tools are unfamiliar to you, follow the links for more info on them. Feel free to customize it, this is a template after all. The point I often make while doing workshops is that you should make your own toolset. This is but an example. I usually look up how my favorite libraries are developed and take what I like. Just try not to overdo it. Don't use tools that are not necessary for your project. The main idea is to spend time actually coding, solving problems, and not thinking about code quality whatsoever.
