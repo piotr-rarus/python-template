@@ -9,7 +9,7 @@ jobs:
     steps:
 
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install Poetry
       uses: snok/install-poetry@v1
@@ -17,20 +17,20 @@ jobs:
         virtualenvs-in-project: true
         virtualenvs-path: .venv
 
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v4
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.11'
         cache: 'poetry'
 
     - name: Cache pre-commit
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pre-commit
         key: pre-commit-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('.pre-commit-config.yaml') }}
 
     - name: Cache mypy
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: .mypy_cache/
         key: mypy_cache-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}
@@ -59,7 +59,7 @@ jobs:
 
     # Requires CODECOV_TOKEN in repository secrets
     - name: Upload codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}  # Only required for private repositories
         file: ./coverage.xml
