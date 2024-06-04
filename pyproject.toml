@@ -5,7 +5,7 @@ description = "Python template repository for ML projects"
 authors = ["peepo-dev-family"]
 
 [tool.poetry.dependencies]
-python = "~3.10"
+python = "~3.11"
 
 [tool.poetry.group.dev]
 optional = true
@@ -27,7 +27,7 @@ yesqa = "^1.4.0"
 
 [tool.ruff]
 line-length = 88
-target-version = "py310"
+target-version = "py311"
 
 [tool.isort]
 ensure_newline_before_comments = true
@@ -36,12 +36,12 @@ include_trailing_comma = true
 line_length = 88
 multi_line_output = 3
 profile = "black"
-py_version = '310'
+py_version = '311'
 use_parentheses = true
 
 [tool.black]
 line-length = 88
-target-version = ['py310']
+target-version = ['py311']
 include = '\.pyi?$'
 exclude = '''
 /(

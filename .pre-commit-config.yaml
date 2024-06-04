@@ -39,7 +39,7 @@ repos:
         name: pyupgrade
         entry: poetry run pyupgrade
         language: system
-        args: [--py310-plus]
+        args: [--py311-plus]
         files: ^src/
 
       - id: yesqa
