@@ -1,6 +1,6 @@
 # Creates a virtual environment and installs dependencies for local development.
 venv:
-	poetry install --no-root
+	poetry install --no-root --with dev
 	poetry run pre-commit install
 
 # Locks the versions of project dependencies for consistency.
