@@ -13,16 +13,16 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
 codespell = "^2.2.4"
-coverage = "^7.2.7"
+coverage = "^7.5.4"
 flake8 = "^6.0.0"
 flake8-isort = "^6.0.0"
 isort = "^5.11.4"
-mypy = "^1.1.1"
+mypy = "^1.10.1"
 pre-commit = "^3.2.1"
 pytest = "^7.1.2"
 pytest-cov = "^4.1.0"
-pyupgrade = "^3.4.0"
-ruff = "^0.0.286"
+pyupgrade = "^3.16.0"
+ruff = "^0.5.0"
 yesqa = "^1.4.0"
 
 [tool.ruff]
