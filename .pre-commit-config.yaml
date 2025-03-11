@@ -1,5 +1,5 @@
 exclude: '.git|.tox'
-default_stages: [commit]
+default_stages: [pre-commit]
 fail_fast: true
 
 repos:
@@ -24,44 +24,32 @@ repos:
     hooks:
       - id: codespell
         name: codespell
-        entry: poetry run codespell
+        entry: uv run codespell
         language: system
         types_or: [python, rst, markdown]
         files: ^src/
 
       - id: isort
         name: isort
-        entry: poetry run isort
+        entry: uv run isort
         language: system
         files: ^src/
 
       - id: pyupgrade
         name: pyupgrade
-        entry: poetry run pyupgrade
+        entry: uv run pyupgrade
         language: system
         args: [--py311-plus]
         files: ^src/
 
-      - id: yesqa
-        name: yesqa
-        entry: poetry run yesqa
-        language: system
-        files: ^src/
-
       - id: black
         name: black
-        entry: poetry run black
+        entry: uv run black
         language: system
         files: ^src/
 
       - id: ruff
         name: ruff
-        entry: poetry run ruff
-        language: system
-        files: ^src/
-
-      - id: flake8
-        name: flake8
-        entry: poetry run flake8
+        entry: uv run ruff check
         language: system
         files: ^src/

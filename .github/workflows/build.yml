@@ -11,17 +11,21 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Install UV
+      uses: astral-sh/setup-uv@v5
+      with:
+        version: "0.6.5"
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+
     - name: Install Poetry
       uses: snok/install-poetry@v1
       with:
         virtualenvs-in-project: true
         virtualenvs-path: .venv
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-        cache: 'poetry'
+    - name: Set up Python 3.12
+      run: uv python install
 
     - name: Cache pre-commit
       uses: actions/cache@v4
@@ -36,26 +40,25 @@ jobs:
         key: mypy_cache-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('poetry.lock') }}
 
     - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root --with dev
+      run: uv sync --all-extras --test
 
     - name: pre-commit
       run: |
-        poetry run pre-commit run -a
+        uv run pre-commit run -a
 
     - name: Mypy
       run: |
-        poetry run mypy --incremental --no-install-types --show-error-codes --pretty src tests
+        uv run mypy --incremental --no-install-types --show-error-codes --pretty src tests
 
     - name: Tests
       run: |
-        poetry run coverage run -m pytest --cov-config=.coveragerc
+        uv run coverage run -m pytest --cov-config=.coveragerc
 
     - name: Tests coverage
       run: |
-        poetry run coverage html
-        poetry run coverage xml
-        poetry run coverage report --show-missing
+        uv run coverage html
+        uv run coverage xml
+        uv run coverage report --show-missing
 
     # Requires CODECOV_TOKEN in repository secrets
     - name: Upload codecov

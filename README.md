@@ -15,14 +15,14 @@ This is a template repository dedicated to `Python` projects. It provides some b
 
 ## Prerequisites
 
-In order to use this template, you need to have both `poetry` and `make` installed.
+In order to use this template, you need to have both `uv` and `make` installed.
 
-### Poetry
+### uv
 
-`poetry` is a package manager we're using. You can check the installation instructions [here](https://python-poetry.org/docs/#installing-with-the-official-installer). You should avoid installing `poetry` through `pip` as it is a system-level tool, separated from the `Python` runtime you're currently using. It enables us to treat `Python` as any other dependency and pin its version in `pyproject.toml`.
+`uv` is a package manager we're using. You can check the installation instructions [here](https://docs.astral.sh/uv/getting-started/installation/). You should avoid installing `poetry` through `pip` as it is a system-level tool, separated from the `Python` runtime you're currently using. It enables us to treat `Python` as any other dependency and pin its version in `pyproject.toml`.
 
 ```sh
-curl -sSL https://install.python-poetry.org | python3 -
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### make
@@ -82,16 +82,14 @@ make build  # format lint test
 - `.pre-commit-config.yaml` - pre-commit pipeline configuration
 - `Makefile` - tasks definitions, much simpler to call `make` than writing whole commands in the terminal; it's also easy to check what project-specific functionalities you're exposing
 - `mypy.ini` - `mypy` config, usually some of your dependencies won't be hinted so you're gonna ignore them here
-- `poetry.lock` - compiled dependencies
-- `poetry.toml` - `poetry` config, as you shouldn't enforce other devs where to put their virtual environment this must be a separate config file
+- `uv.lock` - compiled dependencies
 - `pyproject.toml` - repo config
 
 ## Tools
 
 When developing a project there's a need to automate some tedious stuff that helps you keep the repo clean and check it against common standards. These include managing the environment, dependencies, syntax, etc.
 
-- [poetry](https://github.com/python-poetry/poetry)
-- [flake8](https://github.com/PyCQA/flake8)
+- [uv](https://github.com/astral-sh/uv)
 - [isort](https://github.com/PyCQA/isort)
 - [ruff](https://github.com/charliermarsh/ruff)
 - [black](https://github.com/psf/black)
